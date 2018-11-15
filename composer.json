@@ -1,0 +1,36 @@
+{
+    "name": "videos/importer",
+    "license": "free",
+    "description": "Videos Importer",
+    "keywords": ["videos","importer"],
+    "authors": [
+        {
+            "name": "importer",
+            "email": "importer@cmproductions.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CMProductions\\VideosImporter\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CMProductions\\VideosImporter\\Tests\\Unit\\": "tests/unit/",
+            "CMProductions\\VideosImporter\\Tests\\Integration\\": "tests/integration/",
+            "CMProductions\\VideosImporter\\Tests\\Acceptance\\": "tests/acceptance/"
+        }
+    },
+    "require": {
+        "hirak/prestissimo": "^0.3.8",
+        "ramsey/uuid": "^3.8",
+        "symfony/framework-bundle": "^4.1",
+        "symfony/console": "^4.1",
+        "symfony/yaml": "^4.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.3",
+        "squizlabs/php_codesniffer": "^3.3",
+        "behat/behat": "^3.5"
+    }
+}

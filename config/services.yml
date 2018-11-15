@@ -1,0 +1,23 @@
+services:
+  cm-productions.video.importer.user_interface.video_importer_command:
+      class: CMProductions\VideosImporter\UserInterface\Command\Video\Importer\VideoImporterCommand
+      tags:
+          -  { name: console.command }
+      arguments:
+          - '@cm-productions.video.importer.application.import_videos_use_case'
+
+  cm-productions.video.importer.application.import_videos_use_case:
+      class: CMProductions\VideosImporter\Application\UseCase\Video\ImportVideosUseCase
+      arguments:
+          - '@cm-productions.video.importer.infrastructure.source_video_importer_factory'
+          - '@cm-productions.video.importer.infrastructure.in_memory_video_repository'
+          - '@cm-productions.video.importer.application.video_colllection_resource_data_transformer'
+
+  cm-productions.video.importer.infrastructure.source_video_importer_factory:
+      class: CMProductions\VideosImporter\Infrastructure\Importer\Domain\Model\Video\SourceVideoImporterFactory
+
+  cm-productions.video.importer.infrastructure.in_memory_video_repository:
+      class: CMProductions\VideosImporter\Infrastructure\Persistence\Domain\Model\Video\InMemoryVideoRepository
+
+  cm-productions.video.importer.application.video_colllection_resource_data_transformer:
+      class: CMProductions\VideosImporter\Application\DataTransformer\Video\VideoCollectionDataTransformer

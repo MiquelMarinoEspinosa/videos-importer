@@ -1,0 +1,12 @@
+default:
+    formatters:
+      pretty: true
+    autoload:
+      - '%paths.base%/../tests/acceptance/UserInterface/Command/Behat'
+
+    suites:
+      default:
+        paths:
+          - '%paths.base%/../tests/acceptance/UserInterface/Command/Behat'
+        contexts:
+          - CMProductions\VideosImporter\Tests\Acceptance\UserInterface\Command\Behat\VideoImporterContext
